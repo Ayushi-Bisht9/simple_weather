@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Weather Dashboard</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="app-container">
-    <h1>Smart Weather Dashboard</h1>
 
-    <div class="search-container">
-        <input type="text" id="city-input" placeholder="Enter city...">
-        <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+<header>
+    <img src="https://cdn-icons-png.flaticon.com/512/1779/1779940.png" class="icon">
+    <h1 id="mainHeading">Weather Application</h1>
+    <img src="https://cdn-icons-png.flaticon.com/512/1779/1779940.png" class="icon">
+</header>
+
+<p class="sub-heading">Weather | Temperature | Humidity</p>
+
+<div class="search-box">
+    <input type="text" id="cityInput" placeholder="Enter any Indian city / place">
+    
+    <select id="citySelect">
+        <option value="">Major Cities</option>
+        <option>Delhi</option>
+        <option>Mumbai</option>
+        <option>Kolkata</option>
+        <option>Chennai</option>
+        <option>Bengaluru</option>
+        <option>Hyderabad</option>
+        <option>Jaipur</option>
+        <option>Lucknow</option>
+        <option>Patna</option>
+        <option>Pune</option>
+    </select>
+
+    <button onclick="getWeather()">Search</button>
+</div>
+
+<div class="container">
+    <div class="box" id="weatherBox">
+        <h2>Weather</h2>
+        <p id="weather">--</p>
     </div>
 
-    <!-- Current Weather Cards -->
-    <div id="current-weather" class="current-weather">
-        <div class="weather-box" id="temp-box">
-            <img id="weather-img" src="" alt="Weather Image">
-            <h2 id="city-name">City</h2>
-            <h3 id="temperature">-- °C</h3>
-            <p id="weather-desc">--</p>
-        </div>
-        <div class="weather-box" id="humidity-box">
-            <i class="fa-solid fa-droplet"></i>
-            <h3>Humidity</h3>
-            <p id="humidity">--%</p>
-        </div>
-        <div class="weather-box" id="wind-box">
-            <i class="fa-solid fa-wind"></i>
-            <h3>Wind Speed</h3>
-            <p id="wind-speed">-- km/h</p>
-        </div>
+    <div class="box" id="tempBox">
+        <h2>Temperature</h2>
+        <p id="temperature">-- °C</p>
     </div>
 
-    <!-- 7-Day Forecast -->
-    <h2>7-Day Forecast</h2>
-    <div id="forecast" class="forecast"></div>
-
-    <div class="error" id="error"></div>
+    <div class="box" id="humidityBox">
+        <h2>Humidity</h2>
+        <p id="humidity">-- %</p>
+    </div>
 </div>
 
 <script src="script.js"></script>
